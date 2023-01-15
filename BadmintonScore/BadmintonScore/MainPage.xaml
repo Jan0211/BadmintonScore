@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BadmintonScore.MainPage">
+
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill" RowDefinitions="*,*" ColumnDefinitions="3*,*,*,*" BackgroundColor="Black">
+        <Label x:Name="LabelName1" Grid.Column="0" Grid.Row="0" Padding="50,50" Text="Jan Pixberg" TextColor="#23D231" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="110" />
+        <Label x:Name="LabelName2" Grid.Column="0" Grid.Row="1" Padding="50,50" Text="Dustin Schlamm" TextColor="#FF951D" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="110" />
+
+        <Label x:Name="SetCount1" Grid.Column="1" Grid.Row="0" Text="0" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="70" />
+        <Label x:Name="SetCount2" Grid.Column="1" Grid.Row="1" Text="0" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="70" />
+
+        <Label x:Name="PointCount1" Grid.Column="2" Grid.Row="0" Text="0" TextColor="#23D231" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="220" />
+        <Label x:Name="PointCount2" Grid.Column="2" Grid.Row="1" Text="0" TextColor="#FF951D" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="220" />
+    </Grid>
+    
+    
+</ContentPage>

@@ -22,6 +22,10 @@
         <Button Grid.Column="2" Grid.Row="5" Text="Punkte zurücksetzen" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_ResetPoints2"></Button>
 
         <Label x:Name="debug" Grid.Column="1" Grid.Row="1" />
+
+        <Button Grid.Column="1" Grid.Row="5" Text="Start Wireless Mode" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_WirelessStart" />
+        <Label x:Name="wirelessDebug" TextColor="Black" Grid.Row="4" Grid.Column="1"/>
+
     </Grid>
 
 </ContentPage>

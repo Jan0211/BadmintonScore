@@ -8,7 +8,8 @@ public partial class ControlsPanel : ContentPage
 {
     private MainPage _mainPage = null;
     private int _sets1, _sets2, _points1, _points2;
-    //private WebApplication server;
+    private WebApplication server;
+    private bool _isServerRunning;
 
     public ControlsPanel()
     {
@@ -28,9 +29,11 @@ public partial class ControlsPanel : ContentPage
 
     private void StartHttpServer()
     {
+        if (_isServerRunning) return;
         var builder = WebApplication.CreateBuilder();
-        var server = builder.Build();
+        server = builder.Build();
         server.MapGet("/ChangeDisplay", (string points, string player1, string increase) => ChangeDisplay(Convert.ToBoolean(points), Convert.ToBoolean(player1), Convert.ToBoolean(increase)));
+        server.MapGet("/ResetPoints", (string player1) => ResetPoints(Convert.ToBoolean(player1)));
         var host = Dns.GetHostEntry(Dns.GetHostName());
         wirelessDebug.Text = "IP-Adresses:";
         foreach (var ip in host.AddressList)
@@ -45,6 +48,16 @@ public partial class ControlsPanel : ContentPage
         {
             server.RunAsync();
         });
+        _isServerRunning = true;
+    }
+
+    private void StopHttpServer()
+    {
+        if (server == null) return;
+        if (!_isServerRunning) return;
+        server.StopAsync();
+        wirelessDebug.Text = "";
+        _isServerRunning = false;
     }
 
     private string ChangeDisplay(bool usePoints, bool isPlayer1, bool increase)
@@ -113,6 +126,19 @@ public partial class ControlsPanel : ContentPage
         }
     }
 
+    private string ResetPoints(bool player1)
+    {
+        if (player1)
+        {
+            _points1 = 0;
+            Application.Current.Dispatcher.Dispatch(() => _mainPage.SetPointCount1(_points1.ToString()));
+            return "Reset points from player 1";
+        }
+        _points2 = 0;
+        Application.Current.Dispatcher.Dispatch(() => _mainPage.SetPointCount2(_points2.ToString()));
+        return "Reset points from player 2";
+    }
+
     private void Button_OnClicked_CreateDisplay(object sender, EventArgs e)
     {
         if (_mainPage != null) return;
@@ -178,6 +204,11 @@ public partial class ControlsPanel : ContentPage
         StartHttpServer();
     }
 
+    private void Button_Clicked_WirelessStop(object sender, EventArgs e)
+    {
+        StopHttpServer();
+    }
+
     private void Button_Clicked_ResetPoints1(object sender, EventArgs e)
     {
         if (_mainPage == null) return;
@@ -190,21 +221,6 @@ public partial class ControlsPanel : ContentPage
         if (_mainPage == null) return;
         _points2 = 0;
         _mainPage.SetPointCount2(_points2.ToString());
-    }
-
-    private struct BoardState
-    {
-        public BoardState(int points1, int points2, int set1, int set2, string name1, string name2)
-        {
-            this.points1 = points1;
-            this.points2 = points2;
-            this.set1 = set1;
-            this.set2 = set2;
-            this.name1 = name1;
-            this.name2 = name2;
-        }
-        public int points1, points2, set1, set2;
-        public string name1, name2;
     }
 
 }

@@ -3,28 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BadmintonScore.ControlsPanel">
 
-    <Grid HorizontalOptions="Fill" VerticalOptions="Fill" RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="3*,*,3*" BackgroundColor="LightGray" Padding="50, 50" ColumnSpacing="30">
-        <Entry x:Name="EntryName1" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" PlaceholderColor="Black" Placeholder="Spielername..." TextColor="Black"></Entry>
-        <Entry x:Name="EntryName2" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Column="2" Grid.Row="0" PlaceholderColor="Black" Placeholder="Spielername..." TextColor="Black"></Entry>
-        <Button Grid.Column="1" Grid.Row="0" Text="Display erstellen" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_OnClicked_CreateDisplay" />
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill" RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="3*,*,3*" Padding="50, 50" ColumnSpacing="30">
+        
+        <Entry x:Name="EntryName1" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" Placeholder="Spielername..."></Entry>
+        <Entry x:Name="EntryName2" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Column="2" Grid.Row="0" Placeholder="Spielername..."></Entry>
+        <Button Grid.Column="1" Grid.Row="0" Text="Display erstellen" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_OnClicked_CreateDisplay" />
 
-        <Button Grid.Column="0" Grid.Row="3" Text="Satz +" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_SetPlus1"></Button>
-        <Button Grid.Column="2" Grid.Row="3" Text="Satz +" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_SetPlus2"></Button>
-        <Button Grid.Column="0" Grid.Row="4" Text="Satz -" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_SetMinus1"></Button>
-        <Button Grid.Column="2" Grid.Row="4" Text="Satz -" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_SetMinus2"></Button>
+        <Button Grid.Column="0" Grid.Row="3" Text="Satz +" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_SetPlus1" Margin="0, 30"></Button>
+        <Button Grid.Column="2" Grid.Row="3" Text="Satz +" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_SetPlus2" Margin="0, 30"></Button>
+        <Button Grid.Column="0" Grid.Row="4" Text="Satz -" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_SetMinus1" Margin="0, 30"></Button>
+        <Button Grid.Column="2" Grid.Row="4" Text="Satz -" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_SetMinus2" Margin="0, 30"></Button>
 
-        <Button Grid.Column="0" Grid.Row="1" Text="Punkt +" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_PointPlus1"></Button>
-        <Button Grid.Column="2" Grid.Row="1" Text="Punkt +" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_PointPlus2"></Button>
-        <Button Grid.Column="0" Grid.Row="2" Text="Punkt -" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_PointMinus1"></Button>
-        <Button Grid.Column="2" Grid.Row="2" Text="Punkt -" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_PointMinus2"></Button>
+        <Button Grid.Column="0" Grid.Row="1" Text="Punkt +" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_PointPlus1" Margin="0, 30"></Button>
+        <Button Grid.Column="2" Grid.Row="1" Text="Punkt +" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_PointPlus2" Margin="0, 30"></Button>
+        <Button Grid.Column="0" Grid.Row="2" Text="Punkt -" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_PointMinus1" Margin="0, 30"></Button>
+        <Button Grid.Column="2" Grid.Row="2" Text="Punkt -" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_PointMinus2" Margin="0, 30"></Button>
 
-        <Button Grid.Column="0" Grid.Row="5" Text="Punkte zurücksetzen" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_ResetPoints1"></Button>
-        <Button Grid.Column="2" Grid.Row="5" Text="Punkte zurücksetzen" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_ResetPoints2"></Button>
+        <Button Grid.Column="0" Grid.Row="5" Text="Punkte zurücksetzen" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_ResetPoints1" Margin="0, 30"></Button>
+        <Button Grid.Column="2" Grid.Row="5" Text="Punkte zurücksetzen" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="Button_Clicked_ResetPoints2" Margin="0, 30"></Button>
 
-        <Label x:Name="debug" Grid.Column="1" Grid.Row="1" />
+        <Label x:Name="debug" Grid.Column="1" Grid.Row="1" IsVisible="False"/>
 
-        <Button Grid.Column="1" Grid.Row="5" Text="Start Wireless Mode" TextColor="Black" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_WirelessStart" />
-        <Label x:Name="wirelessDebug" TextColor="Black" Grid.Row="4" Grid.Column="1"/>
+        <Button Grid.Column="1" Grid.Row="3" Text="Start Wireless Mode" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_WirelessStart" />
+        <Button Grid.Column="1" Grid.Row="5" Text="Stop Wirless Mode" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Button_Clicked_WirelessStop"/>
+        
+        <Frame Grid.Row="4" Grid.Column="1">
+            <Label x:Name="wirelessDebug" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
 
     </Grid>
 

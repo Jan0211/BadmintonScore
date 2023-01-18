@@ -1,10 +1,7 @@
-﻿using System.Xml.Linq;
-
-namespace BadmintonScore;
+﻿namespace BadmintonScore;
 
 public partial class MainPage : ContentPage
 {
-    private ControlsPanel _controlsPanel;
 
     public MainPage(string name1, string name2)
 	{

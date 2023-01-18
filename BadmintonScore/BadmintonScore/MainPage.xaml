@@ -13,6 +13,5 @@
         <Label x:Name="PointCount1" Grid.Column="2" Grid.Row="0" Text="0" TextColor="#23D231" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="220" />
         <Label x:Name="PointCount2" Grid.Column="2" Grid.Row="1" Text="0" TextColor="#FF951D" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="220" />
     </Grid>
-    
-    
+
 </ContentPage>

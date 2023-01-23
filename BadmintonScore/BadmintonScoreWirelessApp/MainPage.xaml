@@ -6,12 +6,17 @@
 
     <ScrollView>
         <Grid ColumnDefinitions="*,*" RowDefinitions="auto,auto,*,*,*,*">
-
-            <Entry Grid.Column="0" Grid.Row="0" Placeholder="IP-Adresse" VerticalOptions="Center" Margin="10"/>
+            <Border Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Fill" Margin="7">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8" />
+                </Border.StrokeShape>
+                <Entry Placeholder="IP-Adresse"  VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+            </Border>
+            
             <Button Grid.Column="1" Grid.Row="0" Text="Connect"  VerticalOptions="Center" HorizontalOptions="Fill" Margin="7"/>
 
-            <Label Text="Spieler1" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center"/>
-            <Label Text="Spieler2" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center"/>
+            <Label Text="Nicht verbunden" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center"/>
+            <Label Text="" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center"/>
 
             <Button Text="Point +" Grid.Row="2" Grid.Column="0" Margin="7"/>
             <Button Text="Point -" Grid.Row="3" Grid.Column="0" Margin="7"/>

@@ -1,41 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BadmintonScoreWirelessApp.MainPage">
+             x:Class="BadmintonScoreWirelessApp.MainPage"
+             Title="Wireless Controls">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+        <Grid ColumnDefinitions="*,*" RowDefinitions="auto,auto,*,*,*,*">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <Entry Grid.Column="0" Grid.Row="0" Placeholder="IP-Adresse" VerticalOptions="Center" Margin="10"/>
+            <Button Grid.Column="1" Grid.Row="0" Text="Connect"  VerticalOptions="Center" HorizontalOptions="Fill" Margin="7"/>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+            <Label Text="Spieler1" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center"/>
+            <Label Text="Spieler2" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center"/>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <Button Text="Point +" Grid.Row="2" Grid.Column="0" Margin="7"/>
+            <Button Text="Point -" Grid.Row="3" Grid.Column="0" Margin="7"/>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            <Button Text="Point +" Grid.Row="2" Grid.Column="1" Margin="7"/>
+            <Button Text="Point -" Grid.Row="3" Grid.Column="1" Margin="7"/>
 
-        </VerticalStackLayout>
+
+            <Button Text="Set +" Grid.Row="4" Grid.Column="0" Margin="7"/>
+            <Button Text="Set -" Grid.Row="5" Grid.Column="0" Margin="7"/>
+
+            <Button Text="Set +" Grid.Row="4" Grid.Column="1" Margin="7"/>
+            <Button Text="Set -" Grid.Row="5" Grid.Column="1" Margin="7"/>
+
+
+            <Button Text="Reset Points" Grid.Row="6" Grid.Column="0" Margin="7"/>
+            <Button Text="Reset Points" Grid.Row="6" Grid.Column="1" Margin="7"/>
+        </Grid>
     </ScrollView>
 
 </ContentPage>
